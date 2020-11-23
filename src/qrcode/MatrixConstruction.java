@@ -583,8 +583,6 @@ public class MatrixConstruction {
 
 		penalty += Math.min(percentAbove,percentUnder)*2;
 
-        System.out.println(penalty); //leaving this line here for convenience of testing penalty values if need be
-
 		return penalty;
 	}
 
