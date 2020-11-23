@@ -2,12 +2,6 @@ package reedsolomon;
 
 public final class ErrorCorrectionEncoding {
 	
-	
-	
-	
-	
-	
-	
 	private static final int[] ANTILOG_TABLE = antilogTableGenerator();
 	private static final int[] LOG_TABLE = logTableGenerator();
 	

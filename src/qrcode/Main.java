@@ -2,12 +2,12 @@ package qrcode;
 
 public class Main {
 
-	public static final String INPUT = "google.com";
+	public static final String INPUT = "https://fr.wikihow.com/aller-%C3%A0-la-MAN-%C3%A0-l%27EPFL";
 
 	/*
 	 * Parameters
 	 */
-	public static final int VERSION = 5;
+	public static final int VERSION = 4;
 	public static final int MASK = 2;
 	public static final int SCALING = 15;
 

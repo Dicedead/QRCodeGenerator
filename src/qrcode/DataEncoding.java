@@ -133,16 +133,13 @@ public final class DataEncoding {
 	public static int[] addErrorCorrection(int[] encodedData, int eccLength) {
 		final int ENC_DATA_LEN = encodedData.length;
 		int[] encodedDataCorrected = new int [ENC_DATA_LEN+eccLength];
-			
-		for (int i=0; i<ENC_DATA_LEN ;++i)
-		  {
-		  	encodedDataCorrected[i]=encodedData[i];
-		  }
 
-		for (int j = 0; j<eccLength;++j)
-		  {
-		  	encodedDataCorrected[ENC_DATA_LEN+j] = ErrorCorrectionEncoding.encode(encodedData, eccLength)[j];
-		  }
+		System.arraycopy(encodedData, 0, encodedDataCorrected, 0, ENC_DATA_LEN);
+
+		int[] encodings = ErrorCorrectionEncoding.encode(encodedData, eccLength);
+
+		if (eccLength >= 0) System.arraycopy(encodings, 0, encodedDataCorrected, ENC_DATA_LEN, eccLength);
+
 		return encodedDataCorrected;
 	}
 
